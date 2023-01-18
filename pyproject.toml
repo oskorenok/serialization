@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 79
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | envs
+)/
+'''
+preview = true
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+py_version = 39
+skip = [".git", ".mypy_cache", "envs"]

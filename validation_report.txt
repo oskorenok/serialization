@@ -1,0 +1,11 @@
+[flake8 report (Wed 01/18/2023- 2:42:56.12)] 
+[mypy report (Wed 01/18/2023- 2:42:56.33)] 
+Success: no issues found in 1 source file
+[isort report (Wed 01/18/2023- 2:42:57.45)] 
+Fixing C:\Users\oleksandrs\Desktop\serializaion\deserialization.py
+Skipped 2 files
+[flake8 report (Wed 01/18/2023-12:09:49.49)] 
+[mypy report (Wed 01/18/2023-12:09:49.71)] 
+Success: no issues found in 1 source file
+[isort report (Wed 01/18/2023-12:09:50.82)] 
+Skipped 2 files
