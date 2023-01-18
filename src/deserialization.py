@@ -56,7 +56,7 @@ class Deserializer:
     """
 
     @staticmethod
-    def deserialize(file_path: str) -> List[Entity]:
+    def deserialize_csv(file_path: str) -> List[Entity]:
         """
         Deserialization static method.
 
@@ -77,8 +77,4 @@ class Deserializer:
                     pd.to_datetime(rows["Time"]),
                 )
             )
-        return entities
-
-
-deserialized = Deserializer.deserialize("data.csv")
-print(deserialized)
+        return entities 
