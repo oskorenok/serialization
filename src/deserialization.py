@@ -56,7 +56,7 @@ class Deserializer:
     """
 
     @staticmethod
-    def deserialize(file_path: str) -> List[Entity]:
+    def deserialize_csv(file_path: str) -> List[Entity]:
         """
         Deserialization static method.
 
@@ -79,6 +79,10 @@ class Deserializer:
             )
         return entities
 
+    @staticmethod
+    def deserialize_json(file_path: str) -> List[Entity]:
+        pass
 
-deserialized = Deserializer.deserialize("data.csv")
-print(deserialized)
+    @staticmethod
+    def deserialize_yaml(file_path: str) -> List[Entity]:
+        pass
