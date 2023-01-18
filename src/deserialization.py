@@ -50,14 +50,6 @@ class Entity:
                 raise ValueError("name must be datetime object")
             self.__dict__[__name] = __value
 
-    @staticmethod
-    def from_json(json_dict: dict) -> Entity:
-        return Entity(
-            json_dict["Name"],
-            json_dict["Velocity"],
-            pd.to_datetime(json_dict["Time"]),
-        )
-
 
 class Deserializer:
     """
@@ -65,20 +57,19 @@ class Deserializer:
     """
 
     @staticmethod
-    def deserialize_csv(file_path: str) -> List[Entity]:
+    def read_and_transform(dataframe: pd.DataFrame) -> List[Entity]:
         """
-        CSV file deserialization static method.
+        Method that takes dataframe (Pandas/Dask) iterates within it
+        and returns the Entity list.
 
         Args:
-            file_path (str): Path to the file.
+            dataframe (pd.DataFrame/dask.DataFrame): DataFrame
 
         Returns:
             List[Entity]: List of deserialized entities.
         """
-
-        data = pd.read_csv(file_path, index_col=False)
         entities = []
-        for _, rows in data.iterrows():
+        for _, rows in dataframe.iterrows():
             entities.append(
                 Entity(
                     rows["Name"],
@@ -88,10 +79,10 @@ class Deserializer:
             )
         return entities
 
-    @staticmethod
-    def deserialize_json(file_path: str) -> List[Entity]:
+    @classmethod
+    def deserialize_csv(cls, file_path: str) -> List[Entity]:
         """
-        JSON deserialization static method.
+        CSV file deserialization class method.
 
         Args:
             file_path (str): Path to the file.
@@ -99,9 +90,34 @@ class Deserializer:
         Returns:
             List[Entity]: List of deserialized entities.
         """
-        with open(file_path) as file:
-            return json.load(file, object_hook=Entity.from_json)
 
-    @staticmethod
-    def deserialize_yaml(file_path: str) -> List[Entity]:
-        pass
+        data = pd.read_csv(file_path, index_col=False)
+        return cls.read_and_transform(data)
+
+    @classmethod
+    def deserialize_json(cls, file_path: str) -> List[Entity]:
+        """
+        JSON deserialization class method.
+
+        Args:
+            file_path (str): Path to the file.
+
+        Returns:
+            List[Entity]: List of deserialized entities.
+        """
+        data = pd.read_json(file_path)
+        return cls.read_and_transform(data)
+
+    @classmethod
+    def deserialize_xml(cls, file_path: str) -> List[Entity]:
+        """
+        XML deserialization class method.
+
+        Args:
+            file_path (str): Path to the file.
+
+        Returns:
+            List[Entity]: List of deserialized entities.
+        """
+        data = pd.read_xml(file_path)
+        return cls.read_and_transform(data)

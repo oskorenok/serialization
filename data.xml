@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <row>
+    <Name>Test1</Name>
+    <Velocity>50</Velocity>
+    <Time>12:50</Time>
+  </row>
+  <row>
+    <Name>Test2</Name>
+    <Velocity>60</Velocity>
+    <Time>13:50</Time>
+  </row>
+  <row>
+    <Name>Test3</Name>
+    <Velocity>70</Velocity>
+    <Time>14:50</Time>
+  </row>
+  <row>
+    <Name>Test3</Name>
+    <Velocity>80</Velocity>
+    <Time>15:50</Time>
+  </row>
+</root>
