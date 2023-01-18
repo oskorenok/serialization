@@ -18,16 +18,18 @@ def test_csv_deserializer() -> None:
 
 def test_json_deserializer() -> None:
     assert (
-        Deserializer.deserialize_json("data.csv") == entity_list
+        Deserializer.deserialize_json("data.json") == entity_list
     ), "Deserialized data from data.json isn't equal to entity_list"
 
 
 def test_yaml_deserializer() -> None:
     assert (
-        Deserializer.deserialize_yaml("data.csv") == entity_list
+        Deserializer.deserialize_yaml("data.yaml") == entity_list
     ), "Deserialized data from data.yaml isn't equal to entity_list"
 
 
 if __name__ == "__main__":
     test_csv_deserializer()
+    print("OK")
+    test_json_deserializer()
     print("OK")

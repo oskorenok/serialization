@@ -1,39 +1,6 @@
-[flake8 report (Wed 01/18/2023- 2:42:56.12)] 
-[mypy report (Wed 01/18/2023- 2:42:56.33)] 
-Success: no issues found in 1 source file
-[isort report (Wed 01/18/2023- 2:42:57.45)] 
-Fixing C:\Users\oleksandrs\Desktop\serializaion\deserialization.py
-Skipped 2 files
-[flake8 report (Wed 01/18/2023-12:09:49.49)] 
-[mypy report (Wed 01/18/2023-12:09:49.71)] 
-Success: no issues found in 1 source file
-[isort report (Wed 01/18/2023-12:09:50.82)] 
-Skipped 2 files
-[flake8 report (Wed 01/18/2023-14:11:06.34)] 
-[mypy report (Wed 01/18/2023-14:11:06.93)] 
-src\tests.py:12: error: Function is missing a return type annotation  [no-untyped-def]
-src\tests.py:12: note: Use "-> None" if function does not return a value
-src\tests.py:18: error: Function is missing a return type annotation  [no-untyped-def]
-src\tests.py:18: note: Use "-> None" if function does not return a value
-src\tests.py:20: error: "Type[Deserializer]" has no attribute "deserialize_json"  [attr-defined]
-src\tests.py:24: error: Function is missing a return type annotation  [no-untyped-def]
-src\tests.py:24: note: Use "-> None" if function does not return a value
-src\tests.py:26: error: "Type[Deserializer]" has no attribute "deserialize_yaml"  [attr-defined]
-Found 5 errors in 1 file (checked 2 source files)
-[isort report (Wed 01/18/2023-14:11:10.43)] 
-Fixing C:\Users\oleksandrs\Desktop\serializaion\src\tests.py
-Skipped 2 files
-[flake8 report (Wed 01/18/2023-14:12:19.15)] 
-[mypy report (Wed 01/18/2023-14:12:19.74)] 
-src\tests.py:21: error: "Type[Deserializer]" has no attribute "deserialize_json"  [attr-defined]
-src\tests.py:27: error: "Type[Deserializer]" has no attribute "deserialize_yaml"  [attr-defined]
-Found 2 errors in 1 file (checked 2 source files)
-[isort report (Wed 01/18/2023-14:12:20.83)] 
-Skipped 2 files
-[flake8 report (Wed 01/18/2023-14:14:16.11)] 
-[mypy report (Wed 01/18/2023-14:14:16.65)] 
-src\deserialization.py:83: error: Missing return statement  [empty-body]
-src\deserialization.py:87: error: Missing return statement  [empty-body]
-Found 2 errors in 1 file (checked 2 source files)
-[isort report (Wed 01/18/2023-14:14:17.34)] 
+[flake8 report (Wed 01/18/2023-17:50:18.68)] 
+[mypy report (Wed 01/18/2023-17:50:19.27)] 
+src\deserialization.py:106: error: Missing return statement  [empty-body]
+Found 1 error in 1 file (checked 2 source files)
+[isort report (Wed 01/18/2023-17:50:19.92)] 
 Skipped 2 files

@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Test1",
+    "Velocity": 50,
+    "Time": "12:50"
+  },
+  {
+    "Name": "Test2",
+    "Velocity": 60,
+    "Time": "13:50"
+  },
+  {
+    "Name": "Test3",
+    "Velocity": 70,
+    "Time": "14:50"
+  },
+  {
+    "Name": "Test3",
+    "Velocity": 80,
+    "Time": "15:50"
+  }
+]

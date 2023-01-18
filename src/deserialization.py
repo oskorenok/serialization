@@ -1,4 +1,5 @@
 import datetime
+import json
 from dataclasses import dataclass
 from typing import Any, List
 
@@ -49,6 +50,14 @@ class Entity:
                 raise ValueError("name must be datetime object")
             self.__dict__[__name] = __value
 
+    @staticmethod
+    def from_json(json_dict: dict) -> Entity:
+        return Entity(
+            json_dict["Name"],
+            json_dict["Velocity"],
+            pd.to_datetime(json_dict["Time"]),
+        )
+
 
 class Deserializer:
     """
@@ -58,7 +67,7 @@ class Deserializer:
     @staticmethod
     def deserialize_csv(file_path: str) -> List[Entity]:
         """
-        Deserialization static method.
+        CSV file deserialization static method.
 
         Args:
             file_path (str): Path to the file.
@@ -81,7 +90,17 @@ class Deserializer:
 
     @staticmethod
     def deserialize_json(file_path: str) -> List[Entity]:
-        pass
+        """
+        JSON deserialization static method.
+
+        Args:
+            file_path (str): Path to the file.
+
+        Returns:
+            List[Entity]: List of deserialized entities.
+        """
+        with open(file_path) as file:
+            return json.load(file, object_hook=Entity.from_json)
 
     @staticmethod
     def deserialize_yaml(file_path: str) -> List[Entity]:
